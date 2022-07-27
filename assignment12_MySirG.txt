@@ -1,0 +1,273 @@
+NAME-UDIT KHANDELWAL				ASSIGNMENT-12
+
+
+
+1. Write a recursive function to print first N natural numbers
+
+#include<stdio.h>
+#include<conio.h>
+void printN(int);
+int main()
+{
+    int num;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    printN(num);
+    getch();
+}
+void printN(int n)
+{
+    if(n>0)
+    {
+        printN(n-1);
+        printf("%d ",n);
+    }
+    else
+    {
+        return;
+    }
+}
+
+2. Write a recursive function to print first N natural numbers in reverse order
+
+#include<stdio.h>
+#include<conio.h>
+void printN(int);
+int main()
+{
+    int num;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    printN(num);
+    getch();
+}
+void printN(int n)
+{
+    if(n>0)
+    {
+        printf("%d ",n);
+        printN(n-1);
+    }
+    else
+    {
+        return;
+    }
+}
+
+
+3. Write a recursive function to print first N odd natural numbers
+
+#include<stdio.h>
+#include<conio.h>
+void printN(int);
+int main()
+{
+    int num;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    printN(2*num);
+    getch();
+}
+void printN(int n)
+{
+    if(n>0)
+    {
+        printN(n-1);
+        if(n%2!=0)
+        {
+           printf("%d ",n);
+        }
+    }
+    else
+    {
+        return;
+    }
+}
+
+
+4. Write a recursive function to print first N odd natural numbers in reverse order
+
+#include<stdio.h>
+#include<conio.h>
+void printN(int);
+int main()
+{
+    int num;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    printN(2*num);
+    getch();
+}
+void printN(int n)
+{
+    if(n>0)
+    {
+        if(n%2!=0)
+        {
+           printf("%d ",n);
+        }
+        printN(n-1);
+    }
+    else
+    {
+        return;
+    }
+}
+
+5. Write a recursive function to print first N even natural numbers
+
+#include<stdio.h>
+#include<conio.h>
+void printN(int);
+int main()
+{
+    int num;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    printN(2*num);
+    getch();
+}
+void printN(int n)
+{
+    if(n>0)
+    {
+        printN(n-1);
+        if(n%2==0)
+        {
+           printf("%d ",n);
+        }
+    }
+    else
+    {
+        return;
+    }
+}
+
+
+6. Write a recursive function to print first N even natural numbers in reverse order
+
+#include<stdio.h>
+#include<conio.h>
+void printN(int);
+int main()
+{
+    int num;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    printN(2*num);
+    getch();
+}
+void printN(int n)
+{
+    if(n>0)
+    {
+        if(n%2==0)
+        {
+           printf("%d ",n);
+        }
+        printN(n-1);
+    }
+    else
+    {
+        return;
+    }
+}
+
+7. Write a recursive function to print squares of first N natural numbers
+
+#include<stdio.h>
+#include<conio.h>
+int square(int);
+int main()
+{
+    int num,sq;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    sq=square(num);
+    printf("square of %d is:%d",num,sq);
+    getch();
+}
+int square(int n)
+{
+    static int  s=1;
+    static int c=0;
+    if(c==2)
+        return s;
+    s*=n;
+    c++;
+    square(n);
+}
+
+8. Write a recursive function to print binary of a given decimal number
+
+#include<stdio.h>
+#include<conio.h>
+int binary(int);
+int main()
+{
+    int num,bin;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    bin=binary(num);
+    printf("binary number is: %d",bin);
+    getch();
+}
+int binary(int n)
+{
+    static int b=0;
+    static int p=1;
+    if(n==0)
+        return b;
+    b+=((n%2)*p);
+    p*=10;
+    binary(n/2);
+}
+
+9. Write a recursive function to print octal of a given decimal number
+
+#include<stdio.h>
+#include<conio.h>
+int octal(int);
+int main()
+{
+    int num,oct;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    oct=octal(num);
+    printf("octal number is: %d",oct);
+    getch();
+}
+int octal(int n)
+{
+    static int o=0;
+    static int p=1;
+    if(n==0)
+        return o;
+    o+=((n%8)*p);
+    p*=10;
+    octal(n/8);
+}
+
+10. Write a recursive function to print reverse of a given number
+
+#include<stdio.h>
+#include<conio.h>
+int reverse(int);
+int main()
+{
+    int num,r;
+    printf("enter numbers to print:");
+    scanf("%d",&num);
+    r=reverse(num);
+    printf("reverse number is: %d",r);
+    getch();
+}
+int reverse(int n)
+{
+    static int rev=0;
+    if(n==0)
+        return rev;
+    rev=rev*10+(n%10);
+    reverse(n/10);
+}
+
