@@ -182,7 +182,7 @@ void print(int);
 int main()
 {
     int num;
-    printf("enter numbers:");
+    printf("enter number:");
     scanf("%d",&num);
     print(num);
     getch();
@@ -213,10 +213,11 @@ void print(int i)
 #include<stdio.h>
 #include<conio.h>
 int binary(int);
+int b=0,p=1;
 int main()
 {
     int num,bin;
-    printf("enter numbers to print:");
+    printf("enter a number in decimal:");
     scanf("%d",&num);
     bin=binary(num);
     printf("binary number is: %d",bin);
@@ -224,8 +225,6 @@ int main()
 }
 int binary(int n)
 {
-    static int b=0;
-    static int p=1;
     if(n==0)
         return b;
     b+=((n%2)*p);
@@ -238,10 +237,11 @@ int binary(int n)
 #include<stdio.h>
 #include<conio.h>
 int octal(int);
+int o=0,p=1;
 int main()
 {
     int num,oct;
-    printf("enter numbers to print:");
+    printf("enter a number in decimal:");
     scanf("%d",&num);
     oct=octal(num);
     printf("octal number is: %d",oct);
@@ -249,8 +249,6 @@ int main()
 }
 int octal(int n)
 {
-    static int o=0;
-    static int p=1;
     if(n==0)
         return o;
     o+=((n%8)*p);
@@ -263,10 +261,11 @@ int octal(int n)
 #include<stdio.h>
 #include<conio.h>
 int reverse(int);
+int rev=0;
 int main()
 {
     int num,r;
-    printf("enter numbers to print:");
+    printf("enter a number:");
     scanf("%d",&num);
     r=reverse(num);
     printf("reverse number is: %d",r);
@@ -274,10 +273,10 @@ int main()
 }
 int reverse(int n)
 {
-    static int rev=0;
-    if(n==0)
-        return rev;
-    rev=rev*10+(n%10);
-    reverse(n/10);
+    if(n)
+    {
+        rev=rev*10+(n%10);
+        reverse(n/10);
+    }
+    return rev;
 }
-
